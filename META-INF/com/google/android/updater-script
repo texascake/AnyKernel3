@@ -3,8 +3,4 @@
 # Dummy file; update-binary is a shell script (DO NOT CHANGE)
 #
 #
-<<<<<<< HEAD
-# AK_BASE_VERSION=20240203
-=======
-# AK_BASE_VERSION=20241011
->>>>>>> ef8cd6c (tools: update magisk utils to v28.0(28000) beta)
+# AK_BASE_VERSION=20241217
