@@ -301,6 +301,7 @@ do_devicecheck() {
     for devicename in $device $product $vendordevice $vendorproduct; do
       if [ "$devicename" == "$testname" ]; then
         ui_print "$testname" " ";
+        ui_print "- OK ! ";
         match=1;
         break 2;
       fi;
@@ -342,6 +343,7 @@ do_versioncheck() {
   fi;
   if [ "$supported" ]; then
     ui_print "$android_ver" " ";
+    ui_print "- OK ! ";
   else
     abort " " "Unsupported Android version. Aborting...";
   fi;
