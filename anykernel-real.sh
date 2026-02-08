@@ -23,7 +23,7 @@ device.name2=X00T
 device.name3=Zenfone Max Pro M1 (X00TD)
 device.name4=ASUS_X00TD
 device.name5=ASUS_X00T
-supported.versions=11-15
+supported.versions=11-16
 supported.patchlevels=
 supported.vendorpatchlevels=
 '; } # end properties
