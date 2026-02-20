@@ -4,7 +4,7 @@
 ### AnyKernel setup
 # global properties
 properties() { '
-kernel.string=TOM Kernel by Tokodepia @ github
+kernel.string=TheOneMemory kernel @ github
 do.devicecheck=1
 do.modules=0
 do.systemless=1
