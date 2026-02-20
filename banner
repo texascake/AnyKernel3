@@ -12,9 +12,8 @@
  - Build type          : Nightly
  - Device              : Asus Zenfone Max Pro M1
  - Device codename     : X00TD
- - Kernel version      : 4.19.325 + CIP + st
+ - Kernel version      : 4.19.325 + CIP
  - Maintainer          : @queenserenade
  - Supported           : Android 11 - 16
 ===============================================
-- Do with your own risk
-more commonly phrased as at your own risk.
+-- Do with your own risk --
