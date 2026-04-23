@@ -32,13 +32,13 @@ X00TD=0
 
 # shell variables
 if [ "$X00TD" = "1" ];then
-block=/dev/block/platform/soc/c0c4000.sdhci/by-name/boot;
+BLOCK=/dev/block/platform/soc/c0c4000.sdhci/by-name/boot;
 else
-block=/dev/block/bootdevice/by-name/boot;
+BLOCK=/dev/block/bootdevice/by-name/boot;
 fi
-is_slot_device=0;
-ramdisk_compression=auto;
-patch_vbmeta_flag=auto;
+IS_SLOT_DEVICE=0;
+RAMDISK_COMPRESSION=auto;
+PATCH_VBMETA_FLAG=auto;
 
 
 ## AnyKernel methods (DO NOT CHANGE)
@@ -54,12 +54,12 @@ mount -o remount,rw /vendor;
 ## AnyKernel file attributes
 # set permissions/ownership for included ramdisk files
 if [ "$X00TD" = "1" ];then
-chmod -R 750 $ramdisk/*;
-chmod -R 755 $ramdisk/sbin;
-chmod -R root:root $ramdisk/*;
+chmod -R 750 $RAMDISK/*;
+chmod -R 755 $RAMDISK/sbin;
+chmod -R root:root $RAMDISK/*;
 else
-set_perm_recursive 0 0 755 644 $ramdisk/*;
-set_perm_recursive 0 0 755 755 $ramdisk/init* $ramdisk/sbin;
+set_perm_recursive 0 0 755 644 $RAMDISK/*;
+set_perm_recursive 0 0 755 755 $RAMDISK/init* $RAMDISK/sbin;
 fi
 
 
@@ -90,16 +90,16 @@ cd $home
 
 #Remove old kernel stuffs from ramdisk
 if [ "$X00TD" = "1" ];then
- rm -rf $ramdisk/init.special_power.sh
- rm -rf $ramdisk/init.darkonah.rc
- rm -rf $ramdisk/init.spectrum.rc
- rm -rf $ramdisk/init.spectrum.sh
- rm -rf $ramdisk/init.boost.rc
- rm -rf $ramdisk/init.trb.rc
- rm -rf $ramdisk/init.azure.rc
- rm -rf $ramdisk/init.PBH.rc
- rm -rf $ramdisk/init.Pbh.rc
- rm -rf $ramdisk/init.overdose.rc
+ rm -rf $RAMDISK/init.special_power.sh
+ rm -rf $RAMDISK/init.darkonah.rc
+ rm -rf $RAMDISK/init.spectrum.rc
+ rm -rf $RAMDISK/init.spectrum.sh
+ rm -rf $RAMDISK/init.boost.rc
+ rm -rf $RAMDISK/init.trb.rc
+ rm -rf $RAMDISK/init.azure.rc
+ rm -rf $RAMDISK/init.PBH.rc
+ rm -rf $RAMDISK/init.Pbh.rc
+ rm -rf $RAMDISK/init.overdose.rc
 fi
 
 backup_file init.rc;
@@ -128,40 +128,40 @@ patch_fstab fstab.tuna /data ext4 options "data=ordered" "nomblk_io_submit,data=
 append_file fstab.tuna "usbdisk" fstab;
 
 # remove spectrum profile
-	if [ -e $ramdisk/init.spectrum.rc ];then
-	  rm -rf $ramdisk/init.spectrum.rc
+	if [ -e $RAMDISK/init.spectrum.rc ];then
+	  rm -rf $RAMDISK/init.spectrum.rc
 	  ui_print "delete /init.spectrum.rc"
 	fi
-	if [ -e $ramdisk/init.spectrum.sh ];then
-	  rm -rf $ramdisk/init.spectrum.sh
+	if [ -e $RAMDISK/init.spectrum.sh ];then
+	  rm -rf $RAMDISK/init.spectrum.sh
 	  ui_print "delete /init.spectrum.sh"
 	fi
-	if [ -e $ramdisk/sbin/init.spectrum.rc ];then
-	  rm -rf $ramdisk/sbin/init.spectrum.rc
+	if [ -e $RAMDISK/sbin/init.spectrum.rc ];then
+	  rm -rf $RAMDISK/sbin/init.spectrum.rc
 	  ui_print "delete /sbin/init.spectrum.rc"
 	fi
-	if [ -e $ramdisk/sbin/init.spectrum.sh ];then
-	  rm -rf $ramdisk/sbin/init.spectrum.sh
+	if [ -e $RAMDISK/sbin/init.spectrum.sh ];then
+	  rm -rf $RAMDISK/sbin/init.spectrum.sh
 	  ui_print "delete /sbin/init.spectrum.sh"
 	fi
-	if [ -e $ramdisk/etc/init.spectrum.rc ];then
-	  rm -rf $ramdisk/etc/init.spectrum.rc
+	if [ -e $RAMDISK/etc/init.spectrum.rc ];then
+	  rm -rf $RAMDISK/etc/init.spectrum.rc
 	  ui_print "delete /etc/init.spectrum.rc"
 	fi
-	if [ -e $ramdisk/etc/init.spectrum.sh ];then
-	  rm -rf $ramdisk/etc/init.spectrum.sh
+	if [ -e $RAMDISK/etc/init.spectrum.sh ];then
+	  rm -rf $RAMDISK/etc/init.spectrum.sh
 	  ui_print "delete /etc/init.spectrum.sh"
 	fi
-	if [ -e $ramdisk/init.aurora.rc ];then
-	  rm -rf $ramdisk/init.aurora.rc
+	if [ -e $RAMDISK/init.aurora.rc ];then
+	  rm -rf $RAMDISK/init.aurora.rc
 	  ui_print "delete /init.aurora.rc"
 	fi
-	if [ -e $ramdisk/sbin/init.aurora.rc ];then
-	  rm -rf $ramdisk/sbin/init.aurora.rc
+	if [ -e $RAMDISK/sbin/init.aurora.rc ];then
+	  rm -rf $RAMDISK/sbin/init.aurora.rc
 	  ui_print "delete /sbin/init.aurora.rc"
 	fi
-	if [ -e $ramdisk/etc/init.aurora.rc ];then
-	  rm -rf $ramdisk/etc/init.aurora.rc
+	if [ -e $RAMDISK/etc/init.aurora.rc ];then
+	  rm -rf $RAMDISK/etc/init.aurora.rc
 	  ui_print "delete /etc/init.aurora.rc"
 	fi
 fi
