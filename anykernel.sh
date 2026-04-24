@@ -10,11 +10,11 @@ do.modules=0
 do.systemless=1
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=X00TD
-device.name2=ASUS_X00TD
-device.name3=WW_X00TD
-device.name4=X00T
-device.name5=ASUS_X00T
+device.name1=X01BD
+device.name2=ASUS_X01BD
+device.name3=X01BDA
+device.name4=ZB630KL
+device.name5=ZB631KL
 supported.versions=11-16
 supported.patchlevels=
 supported.vendorpatchlevels=
@@ -29,7 +29,7 @@ set_perm_recursive 0 0 750 750 $RAMDISK/init* $RAMDISK/sbin;
 } # end attributes
 
 # boot shell variables
-BLOCK=/dev/block/platform/soc/c0c4000.sdhci/by-name/boot;
+BLOCK=/dev/block/bootdevice/by-name/boot;
 IS_SLOT_DEVICE=0;
 RAMDISK_COMPRESSION=auto;
 PATCH_VBMETA_FLAG=auto;
